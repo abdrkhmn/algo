@@ -1,5 +1,5 @@
-
-const int DEFAULT_INIT_CAPACITY = 15;
+#ifndef LIST_DEF
+#define LIST_DEF
 
 template<class T>
 class List{
@@ -15,7 +15,8 @@ private:
 		arr = new_arr;
 	}
 
-	int current_iteration = 0;
+	int current_iteration;
+	const int DEFAULT_INIT_CAPACITY = 15;
 public:
 	List(int init_capacity){
 		arr = new T[init_capacity];
@@ -32,7 +33,6 @@ public:
 	}
 
 	T add(T new_element){
-		cout << "Current capacity " << current_capacity << endl;
 		if(asize == current_capacity){
 			current_capacity *= 2;
 
@@ -57,5 +57,6 @@ public:
 	T next(){
 		return arr[current_iteration++];
 	}
-
 };
+
+#endif
