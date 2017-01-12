@@ -6,9 +6,16 @@ class List{
 private:
 	T *arr;
 	int current_capacity;
+	int asize;
 
-	int size;
+	void extend(int new_capacity){
+		int *new_arr = new int[new_capacity];
+		for(int i = 0; i < asize; i++)
+			new_arr[i] = arr[i];
+		arr = new_arr;
+	}
 
+	int current_iteration = 0;
 public:
 	List(int init_capacity){
 		arr = new T[init_capacity];
@@ -25,24 +32,30 @@ public:
 	}
 
 	T add(T new_element){
-		if(size == current_capacity){
+		cout << "Current capacity " << current_capacity << endl;
+		if(asize == current_capacity){
 			current_capacity *= 2;
 
-			int *new_arr = new int[current_capacity];
-			for(int i = 0; i < current_capacity / 2; i++){
-				new_arr[i] = arr[i];
-			}
-			arr = new_arr;
+			extend(current_capacity);
 		}
 
-		arr[size++] = new_element;
+		arr[asize++] = new_element;
 	}
 
 	int size(){
-		return size;
+		return asize;
 	}
 
 	void resize(int new_size){
-
+		int *new_arr = new int[new_size];
+		for(int i = 0; i < asize; i++)
+			new_arr[i] = arr[i];
+		arr = new_arr;
+		asize = new_size;
 	}
+
+	T next(){
+		return arr[current_iteration++];
+	}
+
 };
