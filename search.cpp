@@ -1,14 +1,10 @@
-#include "list.cpp"
-#include <iostream>
-
 #ifndef SEARCH_DEF
 #define SEARCH_DEF
 
 template<class T>
-int bin_search(List<T> arr, T item){
-	std::cout << arr.size() << std::endl;
+int bin_search(int* arr, int size, T item){
 	int l = 0;
-	int r = arr.size();
+	int r = size;
 	int m;
 
 	while(r > l){
@@ -22,8 +18,8 @@ int bin_search(List<T> arr, T item){
 }
 
 template<class T>
-int line_seatch(List<T> arr, T item){
-	for(int i = 0; i < arr.size(); i++){
+int line_seatch(int * arr, int size, T item){
+	for(int i = 0; i < size; i++){
 		if(arr[i] == item)
 			return i;
 	}
