@@ -1,19 +1,20 @@
-#include "sort.cpp"
-#include <bits/stdc++.h>
+#include "segment_tree.cpp"
+#include <cmath>
+#include <cstdlib>
+#include <ctime>
+#include <iostream>
+#include <fstream>
+#include <cstdio>
 using namespace std;
 
+Segment_tree *t;
+
 int main(int argc, char **argv){
-	srand(time(0));
+	int arr[] = {1, 2, 3, 4, 5, 6, 7};
 
-	int n = 15;
-	int* arr = new int[n];
+	t = new Segment_tree(arr, 7);
 
-	for(int i = 0; i < n; i++)
-		arr[i] = n - i;
+	cout << t->get(2, 2) << endl;
 
-	int *ans = bogo_sort(arr, n);
-
-	for(int i = 0; i < n; i++)
-		cout << ans[i] << endl;
 	return 0;
 }

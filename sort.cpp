@@ -4,7 +4,6 @@
 
 #include <cstdlib>
 
-//BOGOSORT
 template<class T>
 bool is_correct(T* arr, int size){
 	for(int i = 0; i < size - 1; i++)
@@ -13,6 +12,7 @@ bool is_correct(T* arr, int size){
 	return true;
 }
 
+//BOGOSORT
 template<class T>
 T* shuffle(T* arr, int size){
 	for(int i = 0; i < size; i++){
@@ -32,7 +32,5 @@ T* bogo_sort(T* arr, int size){
 }
 
 //NAIVE SORT
-
-
 
 #endif
