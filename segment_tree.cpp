@@ -42,7 +42,19 @@ public:
         return get(l, r, 1, end - begin + 1, 1);
     }
 
-    void set(int index, int value);
+    void set(int index, int value){
+    	int current = begin + index;
+    	int delta = value - arr[current];
+    	while(current > 0){
+    		arr[current] += delta;
+    		current /= 2;
+    	}
+    }
+
+    int* get_arr(){
+
+    }
+
     int size(){ return asize; }
 };
 #endif
