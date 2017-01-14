@@ -7,8 +7,6 @@
 #include <cstdio>
 using namespace std;
 
-Segment_tree *t;
-
 int main(int argc, char **argv){
 
 	return 0;
