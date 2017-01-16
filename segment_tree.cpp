@@ -51,10 +51,7 @@ public:
     	}
     }
 
-    int* get_arr(){
-
-    }
-
     int size(){ return asize; }
 };
+
 #endif

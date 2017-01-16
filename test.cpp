@@ -1,4 +1,4 @@
-#include "segment_tree.cpp"
+
 #include <cmath>
 #include <cstdlib>
 #include <ctime>
@@ -6,6 +6,7 @@
 #include <fstream>
 #include <cstdio>
 using namespace std;
+
 
 int main(int argc, char **argv){
 
