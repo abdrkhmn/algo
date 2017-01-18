@@ -18,7 +18,7 @@ int bin_search(int* arr, int size, T item){
 }
 
 template<class T>
-int line_seatch(int * arr, int size, T item){
+int line_search(int * arr, int size, T item){
 	for(int i = 0; i < size; i++){
 		if(arr[i] == item)
 			return i;
